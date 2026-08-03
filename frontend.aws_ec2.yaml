@@ -12,7 +12,6 @@ filters:
   tag:Name: frontend
   instance-state-name : running
 
-  groups:
-  # This created two groups - `Production` and `PreProduction` based on tags
-  # These conditionals are expressed using Jinja2 syntax.
-  redhat: "frontend"
+  keyed_groups:
+    - key: ec2_tags.Application
+      separator: ''
